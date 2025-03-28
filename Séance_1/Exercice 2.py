@@ -7,14 +7,26 @@ exo3 = np.array([26, 34, 30, 28, 37])
 matrix = np.array([exo1,exo2,exo3])
 
 def student_total_time(matrix):
+    total_times = []
     for i in range(len(matrix[0, :])):
         time = 0
         for n in range(len(matrix[:,0])):
-            time += matrix[n,i]
-        return (i+1, n)
+            time += int(matrix[n,i])
+        total_times.append(time)
+    return total_times
 
-print(student_total_time(matrix))
+
 
 #total time 1h45 minutes
-def remaining_time(matrix, total_time):
+def remaining_time(matrix, total_time: float):
     time = total_time*(60**2)
+    timings = student_total_time(matrix)
+    print(timings)
+    remaining = []
+    for i in range(len(timings)):
+        remaining_time = time - timings[i]
+        remaining.append(remaining_time)
+    return remaining
+
+print(remaining_time(matrix, (1,45)))
+
