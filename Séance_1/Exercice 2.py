@@ -44,17 +44,19 @@ def remaining_time(matrix, total_time: float):
 
 def best_scores(points, time_remaining: list):
     
-    best_scores = []
+    scores = []
+    best_score = {}
     
     for i in range(len(points)):
     
         score = points[i]*time_remaining[i]
     
-        best_scores.append(score)
+        scores.append(score)
     
-    maximum_value = np.max(best_scores)
-    
-    return maximum_value
+    maximum_value = int(np.max(scores))
 
-#print(best_scores(points, remaining_time(matrix, 1.75)))
-print(type(matrix))
+    best_score[f'Student {i+1}'] = maximum_value
+    
+    return best_score
+
+print(best_scores(points, remaining_time(matrix, 1.75)))
