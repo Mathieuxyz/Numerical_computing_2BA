@@ -24,7 +24,6 @@ def student_total_time(matrix):
     
     return total_times
 
-
 #total time 1h45 minutes
 def remaining_time(matrix, total_time: float):
     
@@ -57,6 +56,4 @@ def best_scores(points, time_remaining: list):
 
     best_score[f'Student {i+1}'] = maximum_value
     
-    return best_score
-
-print(best_scores(points, remaining_time(matrix, 1.75)))
+    return best_score #returns a dict
