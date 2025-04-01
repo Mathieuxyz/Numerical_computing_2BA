@@ -20,16 +20,17 @@ def plot_graph(Temperatures):
     mean = np.mean(Temperatures)
     std = np.std(Temperatures)
 
-    particular_points = []
+    plt.plot(x,y, marker = 'o', linestyle='-', markerfacecolor='blue', markersize=2, color='blue')
+
     for i in range(len(Temperatures)):
         
-        if Temperatures[i] > mean and (Temperatures[i]- mean) > 10 :
-            particular_points.append((i, Temperatures[i]))
+        if Temperatures[i] > mean and (Temperatures[i]- mean) > 2 :
+            plt.plot(i, Temperatures[i], markersize=8, marker="*", markerfacecolor="red", markeredgecolor="red")
 
-    print(particular_points)
-
-
-    plt.plot(x,y, marker = 'o', linestyle='-')
+    #utiliser numpy.where, mettre en évidence les points bizzares et nommer les graphiques
+    plt.title('Mesure de température')
+    plt.xlabel('Temps [h]')
+    plt.ylabel('Température [°C]')
     plt.show()
 
 plot_graph(A)
