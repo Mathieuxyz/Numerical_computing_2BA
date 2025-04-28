@@ -75,7 +75,7 @@ def cloud(op=None):
     else:
         return x, y
 
-def regression_line(degree_of_precision = None):
+def regression_line(degree_of_precision = None): #useless
     
     x, y = cloud(True)
     x = np.array(x)
@@ -99,7 +99,7 @@ def regression_line(degree_of_precision = None):
         plt.plot(x,ymodel, 'b')
     
     else :
-        print(f'Indicate a degree of precision lower than 4.\nExiting the program...')
+        print(f'Indicate a degree of precision lower than 4.\nExisting the program...')
         sys.exit(1)
 
     plt.scatter(x,y)
@@ -110,7 +110,7 @@ def interpolation():
     x,y = cloud(True)
     x = np.array(x)
 
-    x_interp = np.linspace(x.min(), x.max(), 20)
+    x_interp = np.linspace(x.min(), x.max(), 3)
     y_interp = np.interp(x_interp, x, y)
 
     plt.plot(x,y)

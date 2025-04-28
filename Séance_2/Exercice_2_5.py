@@ -22,10 +22,9 @@ def plot_graph(Temperatures):
 
     plt.plot(x,y, marker = 'o', linestyle='-', markerfacecolor='blue', markersize=2, color='blue')
 
-    for i in range(len(Temperatures)):
-        
-        if Temperatures[i] > mean and (Temperatures[i]- mean) > 2 :
-            plt.plot(i, Temperatures[i], markersize=8, marker="*", markerfacecolor="red", markeredgecolor="red")
+    special_points = np.where(y - mean > std)
+    
+    plt.scatter(special_points, y[special_points], marker="*", color='red')
 
     #utiliser numpy.where, mettre en évidence les points bizzares et nommer les graphiques
     plt.title('Mesure de température')
