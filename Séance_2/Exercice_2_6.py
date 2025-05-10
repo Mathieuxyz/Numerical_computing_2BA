@@ -7,6 +7,7 @@ C = 1*10**(-6)
 fc = 1 / (2 * np.pi * R * C)
 
 frequencies = np.logspace(1, 6, 500)
+print(frequencies)
 omega = 2*np.pi*frequencies
 
 #fonction transfert
@@ -38,5 +39,4 @@ plt.grid(which='both', linestyle='--', linewidth=0.5)
 plt.plot(fc, -45, 'r*', markersize=15, label=f"f_c = {fc:.2f} Hz")
 plt.legend()
 
-plt.tight_layout()
 plt.show()

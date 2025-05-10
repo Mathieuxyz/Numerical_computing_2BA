@@ -1,4 +1,3 @@
-from scipy import linalg
 import numpy as np
 
 def define_Zr(value: int): #working
